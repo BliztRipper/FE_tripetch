@@ -38,9 +38,31 @@
     }
   }
   @if ($breakpoint == mobile) {
-    @media (max-width: 320px) {
+    @media (max-width: 650px) {
       @content;
     }
+  }
+}
+
+// Slick carousal dot
+.slick-dots {
+  bottom: -8px;
+  li button:before {
+    font-size: 15px;
+  }
+  li.slick-active button:before {
+    color: #5c3caf;
+  }
+}
+
+.slider_wrapper {
+  display: none;
+  @include respond(mobile) {
+    display: block;
+    background: #f5f4f9;
+    height: 300px;
+    margin-top: 90vw;
+    overflow: hidden;
   }
 }
 
@@ -109,6 +131,7 @@
   .image-1 {
     grid-area: image-1;
     position: relative;
+    margin: 0;
     img {
       position: absolute;
       left: 20%;
@@ -216,8 +239,93 @@
       }
     }
   }
+  // Mobile breakpoint Athlets
   @include respond(mobile) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    .sub_header-slide {
+      margin: 1rem;
+      .sub_header {
+        font-size: 1.75rem;
+      }
+      &--wrapper {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-left: 0.5rem;
+        margin-top: 2rem;
+      }
+      &--li {
+        @include font-style();
+        color: #000;
+        font-size: 0.875rem;
+        letter-spacing: 0.09375rem;
+        padding-right: 5px;
+        padding-top: 2%;
+        &::after {
+          content: "";
+          max-width: 16px;
+          position: absolute;
+          left: 0;
+          bottom: 24px;
+          right: 0;
+          background: #603ebe;
+          height: 4px;
+          border-radius: 5px;
+        }
+      }
+      @include font-style();
+      color: #c2c2c2;
+      font-size: 2.25rem;
+      letter-spacing: 0.09375rem;
+      position: relative;
+      .paragraph_wrapper {
+        margin-left: 0.5rem;
+        margin-right: 1.25rem;
+        .paragraph {
+          @include font-style();
+          color: #000;
+          font-size: 0.9375rem;
+        }
+      }
+    }
+    .header {
+      .main_header {
+        @include font-style();
+        color: #e7e7e7;
+        font-size: 3.125rem;
+      }
+    }
+    .image-1 {
+      display: block;
+      img {
+        @include img-responsive();
+        position: absolute;
+        width: 83%;
+        left: 12%;
+      }
+    }
+    .sub_header-1 {
+      display: none;
+      visibility: hidden;
+    }
+    .sub_header-2 {
+      display: none;
+      visibility: hidden;
+    }
+    .sub_header-3 {
+      display: none;
+      visibility: hidden;
+    }
+    .image-2 {
+      display: none;
+      visibility: hidden;
+    }
+    .image-3 {
+      display: none;
+      visibility: hidden;
+    }
   }
 }
 
@@ -286,6 +394,7 @@
   .image-1 {
     grid-area: image-1;
     position: relative;
+    margin: 0;
     img {
       position: absolute;
       width: 90%;
@@ -394,7 +503,94 @@
       }
     }
   }
+
+  // Mobile breakpoint Player
   @include respond(mobile) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    .sub_header-slide {
+      margin: 1rem;
+      .sub_header {
+        font-size: 1.75rem;
+      }
+      &--wrapper {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-left: 0.5rem;
+        margin-top: 2rem;
+      }
+      &--li {
+        @include font-style();
+        color: #000;
+        font-size: 0.875rem;
+        letter-spacing: 0.09375rem;
+        padding-right: 5px;
+        padding-top: 2%;
+        &::after {
+          content: "";
+          max-width: 16px;
+          position: absolute;
+          left: 0;
+          bottom: 24px;
+          right: 0;
+          background: #603ebe;
+          height: 4px;
+          border-radius: 5px;
+        }
+      }
+      @include font-style();
+      color: #c2c2c2;
+      font-size: 2.25rem;
+      letter-spacing: 0.09375rem;
+      position: relative;
+      .paragraph_wrapper {
+        margin-left: 0.5rem;
+        margin-right: 1.25rem;
+        .paragraph {
+          @include font-style();
+          color: #000;
+          font-size: 0.9375rem;
+        }
+      }
+    }
+    .header {
+      .main_header {
+        @include font-style();
+        color: #e7e7e7;
+        font-size: 3.125rem;
+      }
+    }
+    .image-1 {
+      display: block;
+      img {
+        @include img-responsive();
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        margin-top: 24vw;
+      }
+    }
+    .sub_header-1 {
+      display: none;
+      visibility: hidden;
+    }
+    .sub_header-2 {
+      display: none;
+      visibility: hidden;
+    }
+    .sub_header-3 {
+      display: none;
+      visibility: hidden;
+    }
+    .image-2 {
+      display: none;
+      visibility: hidden;
+    }
+    .image-3 {
+      display: none;
+      visibility: hidden;
+    }
   }
 }
